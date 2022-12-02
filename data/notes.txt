@@ -1,0 +1,4 @@
+The priority input must be an integer between -20 (high priority) and 19 (low priority).
+Due to differences between Unix priority levels and Windows priority classes, priority is mapped to one of six priority constants in os.constants.priority.
+When retrieving a process priority level, this range mapping may cause the return value to be slightly different on Windows.
+To avoid confusion, set priority to one of the priority constants.
