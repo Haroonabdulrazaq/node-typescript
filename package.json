@@ -2,9 +2,10 @@
   "name": "node-typescript",
   "version": "1.0.0",
   "description": "Following a Youtube Tutorial by UiBrain [Here](https://www.youtube.com/watch?v=jVQRR3pmS0Y&list=PLgp11Hu-N4DQjwdRpePYd7tNjmDyGfNck&index=3)",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.ts"
   },
   "repository": {
     "type": "git",
