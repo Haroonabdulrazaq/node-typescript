@@ -2,6 +2,8 @@ import http, {Server, IncomingMessage, ServerResponse} from 'http'
 import os from 'os'
 import fs from 'fs'
 import path from 'path'
+import { StringUtil } from './util/StringUtil'
+import { MathUtils } from './util/mathUtils'
 
 const hostname: string = '127.0.0.1'
 const port: number = 5000
@@ -39,6 +41,16 @@ let osData = {
     })
   })
 
+    // StringUtil
+
+  let customerName:string = 'UiBrains'
+  let length:number = StringUtil.printLength(customerName)
+
+  let triangleName:string = 'Memorylane'
+  let result:string = StringUtil.printTriangle(triangleName)
+
+  let myNumber:number = 12
+  let answer:string = MathUtils.multiplicationTable(myNumber)
 
 })
 
