@@ -5,6 +5,9 @@ import apiRouter from './router/apiRouter';
 import appLogger from './router/middleware/appLogger';
 import userRouter from './router/userRouter';
 
+// configure express to receive form data
+app.use(express.json())
+
 
 const hostname: string = '127.0.0.1'
 const port: number = 5000
