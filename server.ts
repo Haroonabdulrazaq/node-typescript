@@ -2,7 +2,7 @@ import express, {Request, response, Response} from 'express';
 const app: express.Application = express()
 
 import apiRouter from './router/apiRouter';
-import appLogger from './router/middleware/appLogger';
+import appLogger from './middleware/appLogger';
 import userRouter from './router/userRouter';
 
 // configure express to receive form data

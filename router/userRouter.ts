@@ -2,7 +2,7 @@ import express from 'express'
 import bcrypt from 'bcrypt'
 import { body, validationResult } from 'express-validator'
 
-import fieldValidation from './middleware/fieldValidation'
+import fieldValidation from '../middleware/fieldValidation'
 
 const userRouter: express.Router = express.Router()
 const saltRound = 10
