@@ -39,8 +39,6 @@ async(req: express.Request, res: express.Response)=>{
 } catch(err) {
     res.status(500).json({message: 'Internal server error', err})
 }
-  
-   
 })
 
 export default userRouter;
