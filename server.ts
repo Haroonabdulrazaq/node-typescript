@@ -1,33 +1,27 @@
-import http, {Server, IncomingMessage, ServerResponse} from 'http'
-import { StringUtil } from './util/StringUtil'
-import { MathUtils } from './util/mathUtils'
+import express, {Request, response, Response} from 'express';
+const app: express.Application = express()
+
+import apiRouter from './router/apiRouter';
+import appLogger from './router/middleware/appLogger';
+import userRouter from './router/userRouter';
+
+// configure express to receive form data
+app.use(express.json())
+
 
 const hostname: string = '127.0.0.1'
 const port: number = 5000
 
-const server: Server = http.createServer((req: IncomingMessage, res: ServerResponse) =>{
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/html' )
-
-  // StringUtil
-
-  let customerName:string = 'UiBrains'
-  let length:number = StringUtil.printLength(customerName)
-
-  let triangleName:string = 'Memorylane'
-  let result:string = StringUtil.printTriangle(triangleName)
-
-  let myNumber:number = 12
-  let answer:string = MathUtils.multiplicationTable(myNumber)
-
-  res.end(answer)
-
+// Router
+app.get('/', (req: Request, res: Response)=>{
+  res.setHeader('content-type', 'text/html')
+   res.status(200).send(`<h3>Welcome to expressjs</h3>`)
 })
 
+app.use('/api', appLogger, apiRouter)
+app.use('/user', userRouter)
 
 
-server.listen(port, hostname, () =>{
-  console.log(`Listening at port http://${hostname}:${port}`);
+app.listen( port, hostname,()=>{
+  console.log(`Express Server is started at ${hostname}:${port}`);
 })
-
-
